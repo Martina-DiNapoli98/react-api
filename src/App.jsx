@@ -23,24 +23,40 @@ function App() {
   return (
     <>
       <main>
+        <h1 className='title text-center'>
+          Ratatouille a Casa
+        </h1>
         <section className='posts'>
           <div className='container'>
-            <div className='row'>
 
-              {
-                posts.map((post, index) => (
-                  <div className='col' key={index}>
-                    <div className='card'>
-                      <img className='img-card-body' src={`base_api_url` + `post.image`} alt="" />
-                      <div className='card-body'>
-                        {post.title}
-                      </div>
-                    </div>
-                  </div>
-                ))
-              }
+            {
+              <table className='table table-stripped'>
+                <thead>
+                  <tr>
+                    <th scope='col'>#</th>
+                    <th scope='col'>Product</th>
+                    <th scope='col'>Image</th>
+                    <th scope='col'>Content</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    posts.map((post, index) => (
+                      <tr key={`post - ${index}`}>
+                        <th scope='row'>{index}</th>
+                        <td>{post.title}</td>
+                        <td>
 
-            </div>
+                          <img src={base_api_url + post.image} alt={post.title} width={200} />
+                        </td>
+                        <td>{post.content}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            }
+
           </div>
         </section>
       </main >
