@@ -31,7 +31,7 @@ function App() {
                 posts.map((post, index) => (
                   <div className='col' key={index}>
                     <div className='card'>
-                      <img className='img-card-body' src={base_api_url + post.image} alt="" />
+                      <img className='img-card-body' src={`base_api_url` + `post.image`} alt="" />
                       <div className='card-body'>
                         {post.title}
                       </div>
